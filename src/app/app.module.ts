@@ -7,10 +7,12 @@ import { AppMaterialModule } from './app.material';
 import { PipesModule } from './_pipes/pipes-module';
 import { ExampleService } from './_providers/example.service';
 import { HttpClientModule } from '@angular/common/http';
+import { PokemonListItemComponent } from './_components/pokemon-list-item/pokemon-list-item.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PokemonListItemComponent
   ],
   imports: [
     BrowserAnimationsModule,
