@@ -38,4 +38,9 @@ describe('PokemonListItemComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it(`should get a pokemon's id from the object's url`, () => {
+    expect(component.getPokemonIdFromUrl(mockPokemon.url)).toBe('1');
+  });
+
 });
