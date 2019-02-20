@@ -1,5 +1,7 @@
 # Angular Starter Project
 
+![Screenshot](app-screenshot.png)
+
 ## Table of Contents
 * [About](#about)
 * [Setup](#setup)
