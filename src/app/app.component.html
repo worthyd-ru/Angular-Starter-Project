@@ -23,7 +23,9 @@
       <mat-list *ngFor="let pokemon of allPokemon"
                 role="list">
         <mat-list-item role="listitem">
-          {{pokemon?.name}}
+          <app-pokemon-list-item
+            [pokemon]="pokemon">
+          </app-pokemon-list-item>
         </mat-list-item>
       </mat-list>
     </div>
