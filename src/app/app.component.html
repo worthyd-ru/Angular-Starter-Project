@@ -22,11 +22,9 @@
     <div class="pokemon-list-container">
       <mat-list *ngFor="let pokemon of allPokemon"
                 role="list">
-        <mat-list-item role="listitem">
-          <app-pokemon-list-item
-            [pokemon]="pokemon">
-          </app-pokemon-list-item>
-        </mat-list-item>
+        <app-pokemon-list-item
+          [pokemon]="pokemon">
+        </app-pokemon-list-item>
       </mat-list>
     </div>
 

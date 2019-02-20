@@ -1,3 +1,17 @@
 .pokemon-list-item {
-  border: 1px solid greenyellow;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  .pokemon-icon {
+    flex: 0 1 auto;
+    max-width: 75px;
+  }
+
+  .pokemon-name {
+    flex: 0 1 auto;
+    margin-left: 10px;
+    text-transform: capitalize;
+  }
+
 }

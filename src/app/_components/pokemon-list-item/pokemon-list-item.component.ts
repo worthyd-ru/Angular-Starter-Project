@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ExampleService } from '../../_providers/example.service';
 
 @Component({
   selector: 'app-pokemon-list-item',
@@ -6,16 +7,23 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./pokemon-list-item.component.scss']
 })
 export class PokemonListItemComponent implements OnInit {
-  @Input() pokemon;
+  @Input() pokemon: any;
 
-  constructor() {
+  constructor(private exampleService: ExampleService) {
   }
 
   ngOnInit() {
+    this.exampleService.getPokemonDetails(this.getPokemonIdFromUrl(this.pokemon.url))
+      .subscribe((result: any) => this.pokemon = result);
   }
 
   onItemClick(pokemon) {
     console.log('pokemon', pokemon);
+  }
+
+  getPokemonIdFromUrl(url: string) {
+    const splitUrl = url.split('/');
+    return splitUrl[splitUrl.length - 2];
   }
 
 }
