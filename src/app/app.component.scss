@@ -5,7 +5,16 @@
     text-align: center;
   }
 
-  img {
+  .angular-logo {
     width: 300px;
+  }
+
+  .pokemon-list-container {
+    background-color: $blue-gray-100;
+    border-bottom: 1px solid $blue-gray-900;
+    max-height: 300px;
+    max-width: 50%;
+    margin: 0 auto;
+    overflow: scroll;
   }
 }
