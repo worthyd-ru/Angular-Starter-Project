@@ -1,9 +1,34 @@
 @import 'variables';
 
 .app-component {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+
+  .app-toolbar {
+    background-color: $app-toolbar-background-color;
+    box-shadow: $app-toolbar-shadow;
+    color: $white-color;
+    font-weight: 400;
+    position: sticky;
+    top: 0;
+    z-index: $app-toolbar-z-index;
+  }
+
+  .app-content-container {
+    height: calc(100% - #{$app-toolbar-height});
+    margin: $default-page-margin;
+  }
+
   .intro-card {
+    height: calc(100% - 48px);
+    overflow: auto;
     text-align: center;
-    margin: auto 50px;
   }
 
   .angular-logo {
@@ -16,6 +41,6 @@
     margin: 0 auto;
     max-height: 300px;
     max-width: 50%;
-    overflow: scroll;
+    overflow: auto;
   }
 }
