@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './app.material';
+import { PipesModule } from './_pipes/pipes-module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { AppMaterialModule } from './app.material';
     BrowserAnimationsModule,
     BrowserModule,
     AppMaterialModule, // HAS TO BE AFTER BrowserModule
-    AppRoutingModule
+    AppRoutingModule,
+    PipesModule
   ],
   providers: [],
   bootstrap: [
