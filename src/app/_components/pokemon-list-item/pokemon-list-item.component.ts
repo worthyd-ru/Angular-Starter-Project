@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ExampleService } from '../../_providers/example.service';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material';
 
 @Component({
   selector: 'app-pokemon-list-item',
@@ -8,8 +9,11 @@ import { ExampleService } from '../../_providers/example.service';
 })
 export class PokemonListItemComponent implements OnInit {
   @Input() pokemon: any;
+  snackBarConfig = new MatSnackBarConfig();
 
-  constructor(private exampleService: ExampleService) {
+  constructor(private exampleService: ExampleService,
+              private snackbar: MatSnackBar) {
+    this.snackBarConfig.duration = 2500;
   }
 
   ngOnInit() {
@@ -18,7 +22,7 @@ export class PokemonListItemComponent implements OnInit {
   }
 
   onItemClick(pokemon) {
-    console.log('pokemon', pokemon);
+    this.snackbar.open(`Clicked on ${ pokemon.name }`, null, this.snackBarConfig);
   }
 
   getPokemonIdFromUrl(url: string) {
