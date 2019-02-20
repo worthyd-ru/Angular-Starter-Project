@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './app.material';
 import { PipesModule } from './_pipes/pipes-module';
-import { ExampleService } from './_providers/example.service';
+import { PokemonService } from './_providers/pokemon.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonListItemComponent } from './_components/pokemon-list-item/pokemon-list-item.component';
 
@@ -23,7 +23,7 @@ import { PokemonListItemComponent } from './_components/pokemon-list-item/pokemo
     HttpClientModule
   ],
   providers: [
-    ExampleService
+    PokemonService
   ],
   bootstrap: [
     AppComponent

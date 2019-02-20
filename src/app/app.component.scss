@@ -12,9 +12,9 @@
   .pokemon-list-container {
     background-color: $blue-gray-100;
     border-bottom: 1px solid $blue-gray-900;
+    margin: 0 auto;
     max-height: 300px;
     max-width: 50%;
-    margin: 0 auto;
     overflow: scroll;
   }
 }

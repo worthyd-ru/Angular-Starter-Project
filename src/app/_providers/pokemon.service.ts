@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class ExampleService {
+export class PokemonService {
 
   API_URL = 'https://pokeapi.co/api/v2/pokemon';
 

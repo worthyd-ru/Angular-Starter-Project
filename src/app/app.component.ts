@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { VERSION } from '../environments/version';
-import { ExampleService } from './_providers/example.service';
+import { PokemonService } from './_providers/pokemon.service';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +12,8 @@ export class AppComponent {
   appVersion = VERSION.version;
   allPokemon = [];
 
-  constructor(private exampleService: ExampleService) {
-    this.exampleService.getAllPokemon(20)
+  constructor(private pokemonService: PokemonService) {
+    this.pokemonService.getAllPokemon(20)
       .subscribe((result: any) => this.allPokemon = result.results);
   }
 
