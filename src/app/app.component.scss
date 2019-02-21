@@ -10,24 +10,36 @@
   top: 0;
   width: 100%;
 
+  .side-menu-list {
+    .side-menu-list-item {
+      width: 300px;
+
+      .item-label {
+        margin-left: 30px;
+      }
+    }
+  }
+
   .app-toolbar {
     background-color: $app-toolbar-background-color;
     box-shadow: $app-toolbar-shadow;
     color: $white-color;
-    font-weight: 400;
     position: sticky;
     top: 0;
     z-index: $app-toolbar-z-index;
+
+    .toolbar-title {
+      font-weight: 400;
+      margin-left: 20px;
+    }
   }
 
   .app-content-container {
-    height: calc(100% - #{$app-toolbar-height});
-    margin: $default-page-margin;
+    height: 100%;
   }
 
   .intro-card {
-    height: calc(100% - 48px);
-    overflow: auto;
+    margin: $default-page-margin;
     text-align: center;
   }
 
