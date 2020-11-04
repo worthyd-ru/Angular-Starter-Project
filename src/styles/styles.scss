@@ -1,8 +1,0 @@
-// You can add global styles to this file, and also import other style files
-@import 'variables';
-// Default theme for app required by the angular material library (For custom theming see https://material.angular.io/guide/theming)
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
-
-body {
-  background-color: $blue-gray-50;
-}

@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+@import './theme/light-theme.scss';
+@import './theme/dark-theme.scss';
+
+@import './app/app.component.scss-theme.scss';
+
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+
+@mixin custom-components-theme($theme) {
+  @include app-component-theme($theme);
+}
+
+.light-theme {
+  @include angular-material-theme($starter-light-theme);
+  @include custom-components-theme($starter-light-theme);
+}
+
+.dark-theme {
+  @include angular-material-theme($starter-dark-theme);
+  @include custom-components-theme($starter-dark-theme);
+}
+
+/* You can add global styles to this file, and also import other style files */
+* {
+  &:active,
+  :focus {
+    outline: none !important;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}

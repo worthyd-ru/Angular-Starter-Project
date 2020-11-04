@@ -1,33 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppMaterialModule } from './app.material';
-import { PipesModule } from './_pipes/pipes-module';
-import { PokemonService } from './_providers/pokemon.service';
-import { HttpClientModule } from '@angular/common/http';
-import { PokemonListItemComponent } from './_components/pokemon-list-item/pokemon-list-item.component';
+import { HomeModule } from './features/home/home.module';
+import { MaterialModule } from 'components/shared/modules';
+import { CoreModule } from './core/core.module';
 
+import { CoreModule as CoreComponentModule } from 'components/core';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
-  declarations: [
-    AppComponent,
-    PokemonListItemComponent
-  ],
+  declarations: [AppComponent],
   imports: [
-    BrowserAnimationsModule,
     BrowserModule,
-    AppMaterialModule, // HAS TO BE AFTER BrowserModule
     AppRoutingModule,
-    PipesModule,
+    BrowserAnimationsModule,
+    HomeModule,
+    CoreModule,
+    MaterialModule,
+    CoreComponentModule,
     HttpClientModule
   ],
-  providers: [
-    PokemonService
-  ],
-  bootstrap: [
-    AppComponent
-  ]
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}

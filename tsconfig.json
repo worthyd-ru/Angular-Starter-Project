@@ -5,18 +5,36 @@
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "module": "es2015",
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
+    "downlevelIteration": true,
     "experimentalDecorators": true,
+    "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "target": "es2015",
+    "module": "es2020",
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "components": [
+        "projects/components/src/public-api"
+      ],
+      "components/*": [
+        "projects/components/src/lib/*/public-api"
+      ],
+      "data": [
+        "projects/data/src/public-api"
+      ],
+      "data/*": [
+        "projects/data/src/lib/*/public-api"
+      ],
+      "models": [
+        "projects/models/src/public-api"
+      ],
+      "models/*": [
+        "projects/models/src/lib/*/public-api"
+      ]
+
+    }
   }
 }
