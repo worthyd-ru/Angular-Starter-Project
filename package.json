@@ -12,6 +12,17 @@
     "storybook": "npm run docs:json && start-storybook -p 6006 --no-dll",
     "build-storybook": "npm run docs:json && build-storybook --no-dll"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-commit": "git update-index --again",
+      "pre-push": "ng test --browsers=ChromeHeadless --watch=false"
+    }
+  },
+  "lint-staged": {
+    "*.{ts}": "ng lint",
+    "*.{ts,md,json}": "prettier --write"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~10.2.0",
@@ -43,6 +54,7 @@
     "@types/node": "^12.11.1",
     "babel-loader": "^8.1.0",
     "codelyzer": "^6.0.0",
+    "husky": "^4.3.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.0.0",
@@ -50,6 +62,7 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "lint-staged": "^10.5.1",
     "ng-packagr": "^10.1.0",
     "protractor": "~7.0.0",
     "react-is": "^17.0.1",
