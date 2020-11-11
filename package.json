@@ -20,7 +20,8 @@
     }
   },
   "lint-staged": {
-    "*.{ts}": "ng lint"
+    "*.ts": "ng lint",
+    "*.{ts,md,json}": "prettier --write"
   },
   "private": true,
   "dependencies": {
