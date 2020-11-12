@@ -22,7 +22,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
 
-    console.log('ttesting');
     expect(app.title).toEqual('angular-starter-project');
   });
 });
