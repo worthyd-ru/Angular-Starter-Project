@@ -21,7 +21,7 @@
     }
   },
   "lint-staged": {
-    "*.ts": "lint-staged --config=lint-staged.config.js",
+    "*.ts": "ng-lint-staged lint --fix --",
     "*.{ts,md,json}": "prettier --write"
   },
   "private": true,
