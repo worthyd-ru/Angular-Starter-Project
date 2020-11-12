@@ -15,13 +15,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged --config=lint-staged.config.js",
+      "pre-commit": "ng lint && lint-staged --config=lint-staged.config.js",
       "post-commit": "git update-index --again",
       "pre-push": "ng test --browsers=ChromeHeadless --watch=false"
     }
   },
   "lint-staged": {
-    "*.ts": "ng-lint-staged lint --fix --",
     "*.{ts,md,json}": "prettier --write"
   },
   "private": true,
