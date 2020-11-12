@@ -17,7 +17,7 @@
     "hooks": {
       "pre-commit": "ng lint && lint-staged",
       "post-commit": "git update-index --again",
-      "pre-push": "npm run pre-push"
+      "pre-push": "ng test --browsers=ChromeHeadless --watch=false"
     }
   },
   "lint-staged": {
