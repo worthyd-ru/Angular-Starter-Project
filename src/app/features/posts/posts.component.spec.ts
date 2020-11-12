@@ -1,6 +1,8 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PostsComponent } from './posts.component';
+import { PostsModule } from './posts.module';
 
 describe('PostsComponent', () => {
   let component: PostsComponent;
@@ -8,9 +10,8 @@ describe('PostsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PostsComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientModule, PostsModule]
+    }).compileComponents();
   });
 
   beforeEach(() => {

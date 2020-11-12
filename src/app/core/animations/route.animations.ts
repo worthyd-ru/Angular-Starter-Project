@@ -2,7 +2,7 @@ import { animate, query, style, transition, trigger, stagger, sequence } from '@
 
 export const ROUTE_ANIMATIONS_ELEMENTS = 'route-animations-elements';
 
-const STEPS_ALL: any[] = [
+let STEPS_ALL: any[] = [
   query(':enter > *', style({ opacity: 0, position: 'fixed' }), {
     optional: true
   }),
@@ -45,6 +45,6 @@ const STEPS_PAGE = [STEPS_ALL[0], STEPS_ALL[2]];
 
 export const routeAnimations = trigger('routeAnimations', [transition(isRouteAnimationsPage, STEPS_PAGE)]);
 
-export function isRouteAnimationsPage() {
+export function isRouteAnimationsPage(): boolean {
   return true;
 }
