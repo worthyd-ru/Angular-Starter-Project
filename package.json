@@ -10,12 +10,11 @@
     "e2e": "ng e2e",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006 --no-dll",
-    "build-storybook": "npm run docs:json && build-storybook --no-dll",
-    "stage": "lint-staged --config=lint-staged.config.js"
+    "build-storybook": "npm run docs:json && build-storybook --no-dll"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "ng lint && lint-staged --config=lint-staged.config.js",
+      "pre-commit": "ng lint && lint-staged",
       "post-commit": "git update-index --again",
       "pre-push": "ng test --browsers=ChromeHeadless --watch=false"
     }
