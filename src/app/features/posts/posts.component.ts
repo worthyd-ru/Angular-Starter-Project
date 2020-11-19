@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PostsService } from 'data';
+import { select, Store } from '@ngrx/store';
+import { loadPosts } from './state/posts.actions';
+import { PostState } from './state/posts.state';
+import { selectAll } from './state/posts.selectors';
 
 @Component({
   selector: 'app-posts',
@@ -7,11 +10,11 @@ import { PostsService } from 'data';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
+  constructor(public store: Store<PostState>) {}
 
+  posts$ = this.store.pipe(select(selectAll));
 
-  constructor(private postService: PostsService) {}
-
-  posts$ = this.postService.getPosts();
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.store.dispatch(loadPosts());
+  }
 }

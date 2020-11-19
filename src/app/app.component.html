@@ -1,4 +1,4 @@
-<div class="light-theme">
+<div  [class]="(theme$ | async)">
   <lib-page-layout>
     <div sideBar>
       <mat-nav-list class="main-nav">
