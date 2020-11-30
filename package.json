@@ -5,13 +5,17 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:docker": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006 --no-dll",
     "build-storybook": "npm run docs:json && build-storybook --no-dll",
-    "pre-push": "ng test --browsers=ChromeHeadless --watch=false"
+    "pre-push": "ng test --browsers=ChromeHeadless --watch=false",
+    "docker:build": "docker build -t worthyd/angular-app .",
+    "docker:run": "docker run -d -p 8080:80 --name angular-app worthyd/angular-app:latest",
+    "docker:stop": "docker stop angular-app"
   },
   "husky": {
     "hooks": {

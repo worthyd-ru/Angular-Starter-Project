@@ -24,6 +24,10 @@ import { PostListModule } from './post-list.module';
 export default {
   title: 'Components/Post List',
   component: PostListComponent,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+    onClick: { action: 'clicked' }
+  },
   decorators: [
     moduleMetadata({
       imports: [CommonModule, PostListModule]
