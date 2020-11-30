@@ -1,57 +1,27 @@
-# Angular Starter Project
+# AngularStarterProject
 
-![Screenshot](app-screenshot.png)
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
-## Table of Contents
-* [About](#about)
-* [Setup](#setup)
-* [NPM Commands](#npm-commands)
-* [Changing Users During Development](#changing-users-during-development)
+## Development server
 
-## About
------------------------------------------------------------
-#### Project Information
-Slack Channel: **#your_slack_channel_here**
-```
-Angular CLI: [7.3.2](https://github.com/angular/angular-cli)
-Node: 10.15.1
-NPM: 6.8.0
-Angular: 7.2.5
-... animations, common, compiler, compiler-cli, core, forms
-... language-service, platform-browser, platform-browser-dynamic
-... router
-```
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-#### Package Versions
-```
-@angular-devkit/architect         0.13.2
-@angular-devkit/build-angular     0.13.2
-@angular-devkit/build-optimizer   0.13.2
-@angular-devkit/build-webpack     0.13.2
-@angular-devkit/core              7.3.2
-@angular-devkit/schematics        7.3.2
-@angular/cli                      7.3.2
-@ngtools/webpack                  7.3.2
-@schematics/angular               7.3.2
-@schematics/update                0.13.2
-rxjs                              6.4.0
-typescript                        3.2.4
-webpack                           4.29.0
-```
+## Code scaffolding
 
-## Setup
------------------------------------------------------------
-```sh
-$ nvm use
-$ npm install
-$ npm run start
-```
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## NPM Commands
------------------------------------------------------------
-```sh
-$ npm run lint // Runs SASS linter and code linter
-$ npm run test // Runs tests
-$ npm run build // Builds project for deployment
-```
-Note: Application builds are stored in the `dist/` directory
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

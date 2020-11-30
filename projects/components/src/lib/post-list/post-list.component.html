@@ -1,0 +1,13 @@
+<ng-container *ngIf="!isLoading; else loading">
+  <ng-container *ngIf="posts && posts.length > 0; else noResults">
+    List
+  </ng-container>
+
+</ng-container>
+<ng-template #noResults>
+  No Result
+</ng-template>
+
+<ng-template #loading>
+  Loading
+</ng-template>

@@ -1,0 +1,25 @@
+@import '~@angular/material/theming';
+
+@mixin app-component-theme($theme) {
+  $bg: map-get($theme, background);
+  $fg: map-get($theme, foreground);
+  $accent: map-get($theme, accent);
+  $primary: map-get($theme, primary);
+
+  .content-wrapper {
+    background: mat-color($bg, background);
+    color: mat-color($fg, text);
+
+
+  }
+
+  .active-link {
+    //background: mat-color($accent);;
+    color: mat-color($primary, default-contrast) !important;
+    background: mat-color($primary);
+
+    &:hover, &:focus {
+      background-color: mat-color($primary, darker) !important;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+# Ignore files from the build context for a faster build
+.storybook
+.vscode
+.git
+.editorconfig
+
+adrs
+dist
+e2e
+node_modules
+
+*.zip
+*.md

@@ -1,20 +1,18 @@
 import { Component } from '@angular/core';
-import { VERSION } from '../environments/version';
-import { PokemonService } from './_providers/pokemon.service';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
+import { routeAnimations } from './core/animations/route.animations';
+import { selectEffectiveTheme } from './core/settings/settings.selectors';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [routeAnimations]
 })
 export class AppComponent {
-  title = 'Angular Starter Project';
-  appVersion = VERSION.version;
-  allPokemon = [];
+  title = 'angular-starter-project';
+  theme$: Observable<string> = this.store.pipe(select(selectEffectiveTheme));
 
-  constructor(private pokemonService: PokemonService) {
-    this.pokemonService.getAllPokemon(20)
-      .subscribe((result: any) => this.allPokemon = result.results);
-  }
-
+  constructor(private store: Store) {}
 }

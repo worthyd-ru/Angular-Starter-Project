@@ -1,0 +1,11 @@
+<div class="main-container">
+  <lib-navbar></lib-navbar>
+  <mat-sidenav-container>
+    <mat-sidenav mode="side" opened>
+      <ng-content select="[sideBar]"></ng-content>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <ng-content></ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

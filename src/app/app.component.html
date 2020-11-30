@@ -1,34 +1,20 @@
-<div class="app-component">
-  <mat-card class="intro-card">
-    <h1>
-      Welcome to {{title}}!
-    </h1>
-    <div>
-      App Version: {{appVersion}}
+<div  [class]="(theme$ | async)">
+  <lib-page-layout>
+    <div sideBar>
+      <mat-nav-list class="main-nav">
+        <div class="section-nav">
+          <a mat-list-item routerLink="./" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+            Home
+          </a>
+          <a mat-list-item routerLink="posts" routerLinkActive="active-link">
+            Posts
+          </a>
+        </div>
+      </mat-nav-list>
     </div>
-
-    <img alt="Angular Logo"
-         class="angular-logo"
-         src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-
-    <h2>Example of a pipe</h2>
-    <div>
-      {{'Truncate Text pipe being cut off at 8 characters' | truncateText:8}}
+    <div [@routeAnimations]="o.isActivated ? o.activatedRoute : ''">
+      https://jsonplaceholder.typicode.com/
+      <router-outlet #o="outlet"></router-outlet>
     </div>
-
-    <mat-divider></mat-divider>
-
-    <h2>Example of a service fetching data with a custom component as the list item</h2>
-    <div class="pokemon-list-container">
-      <mat-list *ngFor="let pokemon of allPokemon"
-                role="list">
-        <app-pokemon-list-item
-          [pokemon]="pokemon">
-        </app-pokemon-list-item>
-      </mat-list>
-    </div>
-
-  </mat-card>
+  </lib-page-layout>
 </div>
-
-<router-outlet></router-outlet>
